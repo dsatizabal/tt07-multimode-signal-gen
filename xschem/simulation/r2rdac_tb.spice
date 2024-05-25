@@ -1,0 +1,69 @@
+** sch_path: /home/dsatizabal/tt07-multimode-signal-gen/xschem/r2rdac_tb.sch
+**.subckt r2rdac_tb
+X1 Vb0 Vb1 Vb2 Vb3 Vb4 Vb5 Vb6 Vb7 GND net1 r2rdac
+V1 Vb3 GND pulse(0 1.8 0 0 0 8u 16u)
+V2 Vb2 GND pulse(0 1.8 0 0 0 4u 8u)
+V3 Vb1 GND pulse(0 1.8 0 0 0 2u 4u)
+V4 Vb0 GND pulse(0 1.8 0 0 0 1u 2u)
+V5 Vb7 GND pulse(0 1.8 0 0 0 128u 256u)
+V6 Vb6 GND pulse(0 1.8 0 0 0 64u 128u)
+V7 Vb5 GND pulse(0 1.8 0 0 0 32u 64u)
+V8 Vb4 GND pulse(0 1.8 0 0 0 16u 32u)
+R1 Vout net1 500R m=1
+C1 Vout GND 5p m=1
+**** begin user architecture code
+
+
+* .options filetype=ascii
+.control
+tran 10n 256u uic
+write r2rdac_tb.raw
+.endc
+.end
+
+
+
+.param mc_mm_switch=0
+.param mc_pr_switch=0
+.include /home/dsatizabal/zerotoasic/pdk/sky130A/libs.tech/ngspice/corners/tt.spice
+.include /home/dsatizabal/zerotoasic/pdk/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical.spice
+.include /home/dsatizabal/zerotoasic/pdk/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice
+.include /home/dsatizabal/zerotoasic/pdk/sky130A/libs.tech/ngspice/corners/tt/specialized_cells.spice
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  r2rdac.sym # of pins=10
+** sym_path: /home/dsatizabal/tt07-multimode-signal-gen/xschem/r2rdac.sym
+** sch_path: /home/dsatizabal/tt07-multimode-signal-gen/xschem/r2rdac.sch
+.subckt r2rdac b0 b1 b2 b3 b4 b5 b6 b7 GND OUT
+*.ipin b7
+*.ipin b6
+*.ipin b5
+*.ipin b4
+*.ipin b3
+*.ipin b2
+*.ipin b1
+*.ipin b0
+*.ipin GND
+*.opin OUT
+XR16 b7 OUT GND sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
+XR2 b6 net1 GND sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
+XR3 b5 net2 GND sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
+XR4 b4 net3 GND sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
+XR5 b3 net4 GND sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
+XR6 b2 net5 GND sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
+XR7 b1 net6 GND sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
+XR8 b0 net7 GND sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
+XR1 GND net7 GND sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
+XR9 net7 net6 GND sky130_fd_pr__res_high_po_0p35 L=20 mult=1 m=1
+XR10 net6 net5 GND sky130_fd_pr__res_high_po_0p35 L=20 mult=1 m=1
+XR11 net5 net4 GND sky130_fd_pr__res_high_po_0p35 L=20 mult=1 m=1
+XR12 net4 net3 GND sky130_fd_pr__res_high_po_0p35 L=20 mult=1 m=1
+XR13 net3 net2 GND sky130_fd_pr__res_high_po_0p35 L=20 mult=1 m=1
+XR14 net2 net1 GND sky130_fd_pr__res_high_po_0p35 L=20 mult=1 m=1
+XR15 net1 OUT GND sky130_fd_pr__res_high_po_0p35 L=20 mult=1 m=1
+.ends
+
+.GLOBAL GND
+.end

@@ -1,0 +1,31 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1716564995
+<< checkpaint >>
+rect -450 -766 2602 3276
+<< metal1 >>
+rect 0 0 200 200
+rect 0 -400 200 -200
+use sky130_fd_pr__res_generic_l1_M8K58M  R1
+timestamp 0
+transform 1 0 100 0 1 757
+box -100 -157 100 157
+use sky130_fd_pr__res_generic_m1_MZR69S  R2
+timestamp 0
+transform 1 0 300 0 1 757
+box -100 -157 100 157
+use sky130_fd_pr__res_generic_po_4WEV9M  R4
+timestamp 0
+transform 1 0 1076 0 1 1255
+box -266 -761 266 761
+use sky130_fd_pr__res_generic_nd_TS6NSG  XR3
+timestamp 0
+transform 1 0 605 0 1 1018
+box -258 -471 258 471
+<< labels >>
+flabel metal1 0 0 200 200 0 FreeSans 256 0 0 0 Vp
+port 0 nsew
+flabel metal1 0 -400 200 -200 0 FreeSans 256 0 0 0 Vn
+port 1 nsew
+<< end >>

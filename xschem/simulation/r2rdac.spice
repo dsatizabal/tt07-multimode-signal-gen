@@ -1,0 +1,21 @@
+** sch_path: /home/dsatizabal/tt07-multimode-signal-gen/xschem/r2rdac.sch
+.subckt r2rdac b0 b1 b2 b3 b4 b5 b6 b7 GND OUT
+*.PININFO b7:I b6:I b5:I b4:I b3:I b2:I b1:I b0:I GND:I OUT:O
+XR16 b7 OUT GND sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
+XR2 b6 net1 GND sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
+XR3 b5 net2 GND sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
+XR4 b4 net3 GND sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
+XR5 b3 net4 GND sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
+XR6 b2 net5 GND sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
+XR7 b1 net6 GND sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
+XR8 b0 net7 GND sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
+XR1 GND net7 GND sky130_fd_pr__res_high_po_0p35 L=40 mult=1 m=1
+XR9 net7 net6 GND sky130_fd_pr__res_high_po_0p35 L=20 mult=1 m=1
+XR10 net6 net5 GND sky130_fd_pr__res_high_po_0p35 L=20 mult=1 m=1
+XR11 net5 net4 GND sky130_fd_pr__res_high_po_0p35 L=20 mult=1 m=1
+XR12 net4 net3 GND sky130_fd_pr__res_high_po_0p35 L=20 mult=1 m=1
+XR13 net3 net2 GND sky130_fd_pr__res_high_po_0p35 L=20 mult=1 m=1
+XR14 net2 net1 GND sky130_fd_pr__res_high_po_0p35 L=20 mult=1 m=1
+XR15 net1 OUT GND sky130_fd_pr__res_high_po_0p35 L=20 mult=1 m=1
+.ends
+.end

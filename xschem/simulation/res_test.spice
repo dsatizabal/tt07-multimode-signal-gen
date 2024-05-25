@@ -1,0 +1,9 @@
+** sch_path: /home/dsatizabal/tt07-multimode-signal-gen/xschem/res_test.sch
+.subckt res_test Vp Vn
+*.PININFO Vp:I Vn:I
+R1 net1 Vp sky130_fd_pr__res_generic_l1 W=1 L=1 m=1
+R2 net2 net1 sky130_fd_pr__res_generic_m1 W=1 L=1 m=1
+XR3 net3 net2 net3 sky130_fd_pr__res_generic_nd W=1 L=1 mult=1 m=1
+R4 Vn net3 sky130_fd_pr__res_generic_po W=1 L=1 m=1
+.ends
+.end
